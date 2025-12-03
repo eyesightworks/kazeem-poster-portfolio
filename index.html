@@ -16,142 +16,132 @@
       --card-bg: rgba(10,14,30,0.88);
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: linear-gradient(180deg, var(--dark1), var(--dark2));
       font-family: "Marcellus", serif;
       color: white;
       padding: 20px;
-      display:flex;
-      justify-content:center;
+      display: flex;
+      justify-content: center;
     }
 
     .card {
-      width:100%;
-      max-width:900px;
-      background:var(--card-bg);
-      padding:25px;
-      border-radius:20px;
-      box-shadow:0 0 30px rgba(0,0,0,0.5);
+      width: 100%;
+      max-width: 900px;
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .header {
-      text-align:center;
-      margin-bottom:25px;
+      text-align: center;
+      margin-bottom: 25px;
     }
 
     .header h1 {
-      font-family:"Cinzel Decorative", serif;
-      font-size:40px;
-      background: linear-gradient(to right, var(--gold1), var(--gold2));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      margin-bottom: 15px;
-    }
-
-    /* Container for the gold circles */
-    .school-circles {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    /* Each gold circle */
-    .school-circle {
-      background: radial-gradient(circle, var(--gold1), var(--gold2));
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      font-size: 20px;
-      color: white;
       font-family: "Cinzel Decorative", serif;
-      box-shadow: 0 0 10px var(--gold2);
+      font-size: 40px;
+      background: linear-gradient(to right, var(--gold1), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* White text with small gold diamond separators */
+    .header p {
+      font-size: 18px;
+      margin-top: 8px;
+      font-weight: normal;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    /* Diamond separator style */
+    .separator {
+      color: var(--gold1);
+      margin: 0 6px;
+      font-weight: bold;
+      font-size: 18px;
+      vertical-align: middle;
       user-select: none;
     }
 
     .top-text {
-      text-align:center;
-      margin-bottom:30px;
-      font-size:20px;
-      color:var(--gold1);
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: var(--gold1);
     }
 
     .layout {
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    /* move education downward more */
+    /* Move education text down slightly */
     .left {
-      flex:1 1 45%;
-      color:var(--gold1);
-      font-size:19px;
-      line-height:1.6;
-      margin-top: 80px; /* moved more downward */
+      flex: 1 1 45%;
+      color: var(--gold1);
+      font-size: 19px;
+      line-height: 1.6;
+      margin-top: 45px;
     }
 
     .right {
-      flex:1 1 45%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .circle {
-      width:240px;
-      height:240px;
-      border-radius:50%;
-      border:5px solid var(--gold1);
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 5px solid var(--gold1);
       background: radial-gradient(circle, var(--gold1) 40%, var(--gold2));
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      overflow:hidden;
-      padding:15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 15px;
     }
 
     .circle img {
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:50%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     .name {
-      font-size:24px;
-      font-weight:bold;
-      color:var(--gold1);
-      text-align:center;
-      margin-top: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--gold1);
+      text-align: center;
     }
 
     .title {
-      font-size:18px;
-      text-align:center;
-      color:white;
+      font-size: 18px;
+      text-align: center;
+      color: white;
     }
 
-    @media(max-width:600px){
-      .layout { flex-direction:column; text-align:center; }
-      .left, .right { flex:1 1 100%; }
-      .school-circles {
-        gap: 15px;
+    @media (max-width: 600px) {
+      .layout {
+        flex-direction: column;
+        text-align: center;
       }
-      .school-circle {
-        width: 80px;
-        height: 80px;
-        font-size: 16px;
+
+      .left,
+      .right {
+        flex: 1 1 100%;
       }
     }
-
   </style>
 </head>
 <body>
@@ -160,16 +150,16 @@
 
   <div class="header">
     <h1>Congratulations</h1>
-
-    <div class="school-circles">
-      <div class="school-circle">OOU</div>
-      <div class="school-circle">UNILAG</div>
-      <div class="school-circle">SIU</div>
-    </div>
+    <!-- Text with gold diamond separators -->
+    <p>
+      OOU<span class="separator">◆</span>
+      UNILAG<span class="separator">◆</span>
+      SIU
+    </p>
   </div>
 
   <div class="top-text">
-    Long ambition achieved <br>
+    Long ambition achieved <br />
     PASSION. PURPOSE. PERSISTENCE
   </div>
 
@@ -183,7 +173,7 @@
 
     <div class="right">
       <div class="circle">
-        <img src="assets/images/ustazi.png" alt="Profile Image">
+        <img src="assets/images/ustazi.png" alt="Profile Image" />
       </div>
       <div class="name">Kazeem Rasheed Oluwasegun</div>
       <div class="title">PhD Educational Management</div>
