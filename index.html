@@ -49,7 +49,16 @@
       -webkit-text-fill-color:transparent;
     }
 
-    .header p { font-size:18px; margin-top:8px; }
+    /* GOLD SHARP TEXT FOR OOU UNILAG SIU */
+    .header p {
+      font-size:18px;
+      margin-top:8px;
+      font-weight:bold;
+      background: linear-gradient(to right, var(--gold1), var(--gold2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      letter-spacing:1px;
+    }
 
     .top-text {
       text-align:center;
@@ -65,12 +74,13 @@
       gap:20px;
     }
 
+    /* MOVE EDUCATION BLOCK DOWN SLIGHTLY */
     .left {
       flex:1 1 45%;
       color:var(--gold1);
       font-size:19px;
       line-height:1.6;
-      margin-top:30px; /* moves the text downward */
+      margin-top:45px; /* moved down */
     }
 
     .right {
@@ -90,7 +100,7 @@
       justify-content:center;
       align-items:center;
       overflow:hidden;
-      padding:15px; /* keeps image from touching edge */
+      padding:15px;
     }
 
     .circle img {
@@ -126,7 +136,8 @@
 
   <div class="header">
     <h1>Congratulations</h1>
-    <p>OOU 👉 UNILAG 👉 SIU</p>
+    <!-- GOLD SHARP TEXT (NO HAND EMOJI) -->
+    <p>OOU • UNILAG • SIU</p>
   </div>
 
   <div class="top-text">
