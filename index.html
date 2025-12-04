@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Congratulations — Kazeem Rasheed Oluwasegun</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Marcellus&display=swap" rel="stylesheet">
 
   <style>
@@ -13,27 +14,50 @@
       --gold2: #caa63d;
       --dark1: #020610;
       --dark2: #0a1325;
-      --card-bg: rgba(10,14,30,0.88);
+      --card-bg: rgba(10,14,30,0.95);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
 
     body {
       background: linear-gradient(180deg, var(--dark1), var(--dark2));
       font-family: "Marcellus", serif;
       color: white;
-      padding: 20px;
       display: flex;
       justify-content: center;
+      padding: 20px;
     }
 
     .card {
       width: 100%;
       max-width: 900px;
       background: var(--card-bg);
-      padding: 25px;
+      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      page-break-inside: avoid;
+    }
+
+    .download {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .download button {
+      background: var(--gold1);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 20px;
+      cursor: pointer;
     }
 
     .header {
@@ -43,29 +67,23 @@
 
     .header h1 {
       font-family: "Cinzel Decorative", serif;
-      font-size: 40px;
+      font-size: 42px;
       background: linear-gradient(to right, var(--gold1), var(--gold2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* White text with small gold diamond separators */
     .header p {
       font-size: 18px;
       margin-top: 8px;
-      font-weight: normal;
-      color: white;
       letter-spacing: 1px;
+      color: white;
     }
 
-    /* Diamond separator style */
     .separator {
       color: var(--gold1);
       margin: 0 6px;
       font-weight: bold;
-      font-size: 18px;
-      vertical-align: middle;
-      user-select: none;
     }
 
     .top-text {
@@ -78,29 +96,27 @@
     .layout {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
     }
 
-    /* Move education text down slightly */
     .left {
-      flex: 1 1 45%;
+      flex: 1;
       color: var(--gold1);
       font-size: 19px;
-      line-height: 1.6;
+      line-height: 1.7;
       margin-top: 45px;
     }
 
     .right {
-      flex: 1 1 45%;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
     .circle {
-      width: 240px;
-      height: 240px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       border: 5px solid var(--gold1);
       background: radial-gradient(circle, var(--gold1) 40%, var(--gold2));
@@ -108,7 +124,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      padding: 15px;
+      padding: 12px;
     }
 
     .circle img {
@@ -119,6 +135,7 @@
     }
 
     .name {
+      margin-top: 16px;
       font-size: 24px;
       font-weight: bold;
       color: var(--gold1);
@@ -131,26 +148,42 @@
       color: white;
     }
 
-    @media (max-width: 600px) {
-      .layout {
-        flex-direction: column;
-        text-align: center;
+    /* ---------- PRINT MODE ---------- */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
       }
 
-      .left,
-      .right {
-        flex: 1 1 100%;
+      .download {
+        display: none;
       }
+
+      .card {
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 20mm;
     }
   </style>
 </head>
+
 <body>
 
 <div class="card">
 
+  <div class="download">
+    <button onclick="window.print()">Download / Save as PDF</button>
+  </div>
+
   <div class="header">
     <h1>Congratulations</h1>
-    <!-- Text with gold diamond separators -->
     <p>
       OOU<span class="separator">◆</span>
       UNILAG<span class="separator">◆</span>
@@ -173,7 +206,7 @@
 
     <div class="right">
       <div class="circle">
-        <img src="assets/images/ustazi.png" alt="Profile Image" />
+        <img src="images/ustazi.png" alt="Profile Image">
       </div>
       <div class="name">Kazeem Rasheed Oluwasegun</div>
       <div class="title">PhD Educational Management</div>
